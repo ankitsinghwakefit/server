@@ -2,7 +2,6 @@ const router = require("express").Router()
 const Count = require("../models/count")
 
 router.post('/count', async (req, res) => {
-  
   try {
     Count.findOneAndUpdate({"_id": "640ea2be1a832be6fab0ee89"},{ $inc : { people : req.body.people } },function(err, response) {
       if (err) {
